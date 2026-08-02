@@ -6,10 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:generate": "npm run typeorm -- migration:generate -d src/lib/db/cli-data-source.ts",
+    "migration:run": "npm run typeorm -- migration:run -d src/lib/db/cli-data-source.ts",
+    "migration:revert": "npm run typeorm -- migration:revert -d src/lib/db/cli-data-source.ts",
+    "db:seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
-    "@base-ui/react": "^1.6.0",
     "@paystack/inline-js": "^2.22.2",
     "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",
@@ -43,7 +47,17 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "tsx": "^4.23.5",
     "typescript": "^5"
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node"
+    }
   }
 }
