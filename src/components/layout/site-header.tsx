@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { User } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/layout/logo";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { AccountMenu } from "@/components/layout/account-menu";
 import { NAV_LINKS } from "@/lib/nav-links";
 import { CartTrigger } from "@/components/cart/cart-trigger";
 
@@ -24,11 +23,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-1">
-          <Button variant="ghost" size="icon" asChild aria-label="Account">
-            <Link href="/account/orders">
-              <User className="size-5" />
-            </Link>
-          </Button>
+          <AccountMenu />
           <CartTrigger />
         </div>
       </div>
