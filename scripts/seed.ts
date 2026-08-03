@@ -1,10 +1,18 @@
+import bcrypt from "bcryptjs";
 import AppDataSource from "@/lib/db/cli-data-source";
 import { Category } from "@/lib/db/entities/category.entity";
 import { Product } from "@/lib/db/entities/product.entity";
+import { User } from "@/lib/db/entities/user.entity";
 
 function unsplash(id: string) {
   return `https://images.unsplash.com/${id}?q=80&w=1200&auto=format&fit=crop`;
 }
+
+const DEMO_USER = {
+  name: "Demo Shopper",
+  email: "demo@commerceeveryday.com",
+  password: "Demo1234!",
+};
 
 const CATEGORIES = [
   {
@@ -266,7 +274,16 @@ async function seed() {
     ["slug"],
   );
 
-  console.log(`Seeded ${categories.length} categories and ${PRODUCTS.length} products.`);
+  const userRepo = dataSource.getRepository(User);
+  const passwordHash = await bcrypt.hash(DEMO_USER.password, 12);
+  await userRepo.upsert(
+    [{ name: DEMO_USER.name, email: DEMO_USER.email, passwordHash }],
+    ["email"],
+  );
+
+  console.log(
+    `Seeded ${categories.length} categories, ${PRODUCTS.length} products, and demo user ${DEMO_USER.email}.`,
+  );
   await dataSource.destroy();
 }
 
