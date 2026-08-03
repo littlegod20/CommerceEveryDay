@@ -36,7 +36,7 @@ export function ProductInfo({ product }: { product: Product }) {
 
       <p className="max-w-prose leading-relaxed text-muted-foreground">{product.description}</p>
 
-      <AddToCartButton disabled={stockStatus.kind === "out-of-stock"} />
+      <AddToCartButton productId={product.id} productName={product.name} stock={product.stock} />
     </div>
   );
 }

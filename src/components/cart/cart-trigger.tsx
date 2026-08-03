@@ -1,10 +1,7 @@
-import { ShoppingBag } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { CartDrawer } from "@/components/cart/cart-drawer";
+import { getCart } from "@/lib/cart/queries";
 
-export function CartTrigger() {
-  return (
-    <Button variant="ghost" size="icon" aria-label="Cart">
-      <ShoppingBag className="size-5" />
-    </Button>
-  );
+export async function CartTrigger() {
+  const cart = await getCart();
+  return <CartDrawer cart={cart} />;
 }
