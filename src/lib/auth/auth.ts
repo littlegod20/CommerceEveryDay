@@ -7,6 +7,9 @@ import { User } from "@/lib/db/entities/user.entity";
 export const { handlers, auth, signIn, signOut } = NextAuth({
   session: { strategy: "jwt" },
   pages: { signIn: "/account/login" },
+  // Trust the host header from the platform's reverse proxy (Vercel, or any
+  // other host behind a proxy/CDN) instead of requiring an explicit AUTH_URL.
+  trustHost: true,
   providers: [
     Credentials({
       credentials: {
