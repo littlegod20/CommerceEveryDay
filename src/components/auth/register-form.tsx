@@ -6,11 +6,12 @@ import { Label } from "@/components/ui/label";
 import { SubmitButton } from "@/components/auth/submit-button";
 import { registerAction } from "@/lib/auth/actions";
 
-export function RegisterForm() {
+export function RegisterForm({ callbackUrl }: { callbackUrl?: string }) {
   const [state, formAction] = useActionState(registerAction, undefined);
 
   return (
     <form action={formAction} className="space-y-4">
+      <input type="hidden" name="callbackUrl" value={callbackUrl ?? ""} />
       <div className="space-y-1.5">
         <Label htmlFor="name">Name</Label>
         <Input id="name" name="name" type="text" autoComplete="name" required />

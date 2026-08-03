@@ -12,9 +12,19 @@ export async function signOutAction() {
   await signOut({ redirectTo: "/" });
 }
 
-async function signInWithCredentials(email: string, password: string): Promise<AuthActionState> {
+/** Only allow same-origin relative paths, to prevent open-redirect via a spoofed callbackUrl. */
+function safeCallbackUrl(candidate: FormDataEntryValue | null): string {
+  const value = typeof candidate === "string" ? candidate : "";
+  return value.startsWith("/") && !value.startsWith("//") ? value : "/account/orders";
+}
+
+async function signInWithCredentials(
+  email: string,
+  password: string,
+  redirectTo: string,
+): Promise<AuthActionState> {
   try {
-    await signIn("credentials", { email, password, redirectTo: "/account/orders" });
+    await signIn("credentials", { email, password, redirectTo });
     return undefined;
   } catch (error) {
     if (error instanceof AuthError) {
@@ -52,7 +62,7 @@ export async function registerAction(
   const passwordHash = await bcrypt.hash(password, 12);
   await userRepo.save(userRepo.create({ name, email, passwordHash }));
 
-  return signInWithCredentials(email, password);
+  return signInWithCredentials(email, password, safeCallbackUrl(formData.get("callbackUrl")));
 }
 
 export async function loginAction(
@@ -68,5 +78,5 @@ export async function loginAction(
     return { error: "Email and password are required." };
   }
 
-  return signInWithCredentials(email, password);
+  return signInWithCredentials(email, password, safeCallbackUrl(formData.get("callbackUrl")));
 }
