@@ -25,6 +25,7 @@ export function FeaturedCategories({ categories }: { categories: Category[] }) {
               src={CATEGORY_IMAGES[category.slug] ?? category.products?.[0]?.imageUrl ?? ""}
               alt={category.name}
               fill
+              priority
               sizes="(min-width: 640px) 33vw, 100vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
