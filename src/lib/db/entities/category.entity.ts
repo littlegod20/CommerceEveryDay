@@ -5,7 +5,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Product } from "./product.entity";
+import type { Product } from "./product.entity";
 
 @Entity({ name: "categories" })
 export class Category {
@@ -21,7 +21,7 @@ export class Category {
   @Column({ type: "text", nullable: true })
   description!: string | null;
 
-  @OneToMany(() => Product, (product) => product.category)
+  @OneToMany("Product", "category")
   products!: Product[];
 
   @CreateDateColumn({ name: "created_at" })

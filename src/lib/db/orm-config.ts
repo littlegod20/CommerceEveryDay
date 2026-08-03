@@ -9,7 +9,6 @@ export function createDataSourceOptions(databaseUrl: string): DataSourceOptions 
     url: databaseUrl,
     ssl: requiresSsl ? { rejectUnauthorized: false } : false,
     entities: [Category, Product, User, Cart, CartItem, Order, OrderItem],
-    migrations: ["src/lib/db/migrations/*.ts"],
     synchronize: false,
     logging: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
   };

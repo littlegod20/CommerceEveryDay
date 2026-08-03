@@ -12,6 +12,9 @@ if (!databaseUrl) {
   throw new Error("DATABASE_URL is not set. Copy .env.example to .env.local and fill it in.");
 }
 
-const AppDataSource = new DataSource(createDataSourceOptions(databaseUrl));
+const AppDataSource = new DataSource({
+  ...createDataSourceOptions(databaseUrl),
+  migrations: ["src/lib/db/migrations/*.ts"],
+});
 
 export default AppDataSource;

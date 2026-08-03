@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
-import { CartItem } from "./cart-item.entity";
+import type { CartItem } from "./cart-item.entity";
 
 @Entity({ name: "carts" })
 export class Cart {
@@ -18,7 +18,7 @@ export class Cart {
   @Column({ name: "session_id", type: "varchar", length: 64 })
   sessionId!: string;
 
-  @OneToMany(() => CartItem, (item) => item.cart, { cascade: true })
+  @OneToMany("CartItem", "cart", { cascade: true })
   items!: CartItem[];
 
   @CreateDateColumn({ name: "created_at" })

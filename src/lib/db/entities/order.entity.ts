@@ -10,7 +10,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { User } from "./user.entity";
-import { OrderItem } from "./order-item.entity";
+import type { OrderItem } from "./order-item.entity";
 
 export enum OrderStatus {
   PENDING = "pending",
@@ -49,7 +49,7 @@ export class Order {
   @Column({ name: "shipping_phone", type: "varchar", length: 32 })
   shippingPhone!: string;
 
-  @OneToMany(() => OrderItem, (item) => item.order, { cascade: true })
+  @OneToMany("OrderItem", "order", { cascade: true })
   items!: OrderItem[];
 
   @CreateDateColumn({ name: "created_at" })
