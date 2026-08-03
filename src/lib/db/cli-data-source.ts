@@ -12,4 +12,6 @@ if (!databaseUrl) {
   throw new Error("DATABASE_URL is not set. Copy .env.example to .env.local and fill it in.");
 }
 
-export default new DataSource(createDataSourceOptions(databaseUrl));
+const AppDataSource = new DataSource(createDataSourceOptions(databaseUrl));
+
+export default AppDataSource;
