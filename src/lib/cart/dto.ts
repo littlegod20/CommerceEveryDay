@@ -4,7 +4,7 @@ export type CartItemDto = {
   name: string;
   slug: string;
   imageUrl: string;
-  priceInKobo: number;
+  priceInCents: number;
   quantity: number;
   stock: number;
 };
@@ -12,7 +12,7 @@ export type CartItemDto = {
 export type CartDto = {
   items: CartItemDto[];
   itemCount: number;
-  subtotalInKobo: number;
+  subtotalInCents: number;
 };
 
-export const EMPTY_CART: CartDto = { items: [], itemCount: 0, subtotalInKobo: 0 };
+export const EMPTY_CART: CartDto = { items: [], itemCount: 0, subtotalInCents: 0 };

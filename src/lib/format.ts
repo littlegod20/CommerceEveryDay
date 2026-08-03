@@ -1,9 +1,8 @@
-const nairaFormatter = new Intl.NumberFormat("en-NG", {
+const usdFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "NGN",
-  maximumFractionDigits: 0,
+  currency: "USD",
 });
 
-export function formatPriceFromKobo(priceInKobo: number): string {
-  return nairaFormatter.format(priceInKobo / 100);
+export function formatPriceFromCents(priceInCents: number): string {
+  return usdFormatter.format(priceInCents / 100);
 }

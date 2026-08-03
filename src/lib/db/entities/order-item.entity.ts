@@ -32,8 +32,8 @@ export class OrderItem {
   @Column({ name: "product_name", type: "varchar", length: 160 })
   productName!: string;
 
-  @Column({ name: "price_in_kobo_at_purchase", type: "integer" })
-  priceInKoboAtPurchase!: number;
+  @Column({ name: "price_in_cents_at_purchase", type: "integer" })
+  priceInCentsAtPurchase!: number;
 
   @Column({ type: "integer" })
   quantity!: number;

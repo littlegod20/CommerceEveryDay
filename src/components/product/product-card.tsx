@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { formatPriceFromKobo } from "@/lib/format";
+import { formatPriceFromCents } from "@/lib/format";
 import { getStockStatus } from "@/lib/catalog/stock-status";
 import type { Product } from "@/lib/db/entities/product.entity";
 
@@ -41,7 +41,7 @@ export function ProductCard({ product }: { product: Product }) {
           </p>
         ) : null}
         <h3 className="font-heading text-base font-semibold text-foreground">{product.name}</h3>
-        <p className="text-sm font-medium text-primary">{formatPriceFromKobo(product.priceInKobo)}</p>
+        <p className="text-sm font-medium text-primary">{formatPriceFromCents(product.priceInCents)}</p>
       </div>
     </Link>
   );

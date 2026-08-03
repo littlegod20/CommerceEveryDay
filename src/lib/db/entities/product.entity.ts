@@ -25,8 +25,8 @@ export class Product {
   @Column({ type: "text" })
   description!: string;
 
-  @Column({ name: "price_in_kobo", type: "integer" })
-  priceInKobo!: number;
+  @Column({ name: "price_in_cents", type: "integer" })
+  priceInCents!: number;
 
   @Column({ name: "image_url", type: "text" })
   imageUrl!: string;

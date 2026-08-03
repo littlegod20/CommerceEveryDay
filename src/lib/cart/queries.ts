@@ -28,7 +28,7 @@ export async function getCart(): Promise<CartDto> {
     name: item.product.name,
     slug: item.product.slug,
     imageUrl: item.product.imageUrl,
-    priceInKobo: item.product.priceInKobo,
+    priceInCents: item.product.priceInCents,
     quantity: item.quantity,
     stock: item.product.stock,
   }));
@@ -36,6 +36,6 @@ export async function getCart(): Promise<CartDto> {
   return {
     items,
     itemCount: items.reduce((sum, item) => sum + item.quantity, 0),
-    subtotalInKobo: items.reduce((sum, item) => sum + item.priceInKobo * item.quantity, 0),
+    subtotalInCents: items.reduce((sum, item) => sum + item.priceInCents * item.quantity, 0),
   };
 }

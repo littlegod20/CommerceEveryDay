@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { AddToCartButton } from "@/components/product/add-to-cart-button";
-import { formatPriceFromKobo } from "@/lib/format";
+import { formatPriceFromCents } from "@/lib/format";
 import { getStockStatus } from "@/lib/catalog/stock-status";
 import type { Product } from "@/lib/db/entities/product.entity";
 
@@ -21,7 +21,7 @@ export function ProductInfo({ product }: { product: Product }) {
           {product.name}
         </h1>
         <p className="text-xl font-medium text-primary">
-          {formatPriceFromKobo(product.priceInKobo)}
+          {formatPriceFromCents(product.priceInCents)}
         </p>
       </div>
 

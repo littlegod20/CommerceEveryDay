@@ -14,7 +14,7 @@ import {
   SheetFooter,
 } from "@/components/ui/sheet";
 import { CartItemRow } from "@/components/cart/cart-item-row";
-import { formatPriceFromKobo } from "@/lib/format";
+import { formatPriceFromCents } from "@/lib/format";
 import { removeCartItemAction, updateCartItemQuantityAction } from "@/lib/cart/actions";
 import type { CartDto } from "@/lib/cart/dto";
 
@@ -71,7 +71,7 @@ export function CartDrawer({ cart }: { cart: CartDto }) {
           <SheetFooter className="border-t border-border">
             <div className="flex items-center justify-between text-sm font-medium">
               <span>Subtotal</span>
-              <span>{formatPriceFromKobo(cart.subtotalInKobo)}</span>
+              <span>{formatPriceFromCents(cart.subtotalInCents)}</span>
             </div>
             <Button asChild size="lg" onClick={() => setOpen(false)}>
               <Link href="/checkout">Checkout</Link>

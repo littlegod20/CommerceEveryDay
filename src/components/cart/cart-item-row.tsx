@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Minus, Plus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatPriceFromKobo } from "@/lib/format";
+import { formatPriceFromCents } from "@/lib/format";
 import type { CartItemDto } from "@/lib/cart/dto";
 
 export function CartItemRow({
@@ -34,7 +34,7 @@ export function CartItemRow({
             <X className="size-3.5" />
           </Button>
         </div>
-        <p className="text-sm text-muted-foreground">{formatPriceFromKobo(item.priceInKobo)}</p>
+        <p className="text-sm text-muted-foreground">{formatPriceFromCents(item.priceInCents)}</p>
         <div className="mt-1 flex items-center rounded-md border border-border w-fit">
           <Button
             type="button"

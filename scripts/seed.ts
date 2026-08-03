@@ -28,7 +28,7 @@ const PRODUCTS: {
   name: string;
   slug: string;
   description: string;
-  priceInKobo: number;
+  priceInCents: number;
   imageId: string;
   stock: number;
   categorySlug: (typeof CATEGORIES)[number]["slug"];
@@ -39,7 +39,7 @@ const PRODUCTS: {
     slug: "speckled-ceramic-mug",
     description:
       "A hand-glazed stoneware mug with a soft speckled finish. Holds 350ml, microwave and dishwasher safe.",
-    priceInKobo: 450000,
+    priceInCents: 1800,
     imageId: "photo-1616241673111-508b4662c707",
     stock: 42,
     categorySlug: "kitchen-home",
@@ -49,7 +49,7 @@ const PRODUCTS: {
     slug: "cast-iron-skillet",
     description:
       "A 10-inch pre-seasoned cast iron skillet that goes from stovetop to oven. Builds a better patina with every use.",
-    priceInKobo: 2800000,
+    priceInCents: 6500,
     imageId: "photo-1603038124597-2c5c207edf47",
     stock: 0,
     categorySlug: "kitchen-home",
@@ -59,7 +59,7 @@ const PRODUCTS: {
     slug: "walnut-cutting-board",
     description:
       "End-grain walnut board that's gentle on knife edges and finished with food-safe mineral oil.",
-    priceInKobo: 1250000,
+    priceInCents: 4200,
     imageId: "photo-1690983322029-eee73c0afa14",
     stock: 27,
     categorySlug: "kitchen-home",
@@ -69,7 +69,7 @@ const PRODUCTS: {
     slug: "classic-french-press",
     description:
       "Borosilicate glass carafe with a stainless mesh filter. Brews a full-bodied 1-litre pot.",
-    priceInKobo: 1800000,
+    priceInCents: 3800,
     imageId: "photo-1708127368781-cd5f069a90a5",
     stock: 15,
     categorySlug: "kitchen-home",
@@ -79,7 +79,7 @@ const PRODUCTS: {
     slug: "linen-tea-towel-set",
     description:
       "Set of three stonewashed linen towels that get softer with every wash. Generously sized at 50x70cm.",
-    priceInKobo: 700000,
+    priceInCents: 2800,
     imageId: "photo-1762539747176-5d8f166346de",
     stock: 60,
     categorySlug: "kitchen-home",
@@ -89,7 +89,7 @@ const PRODUCTS: {
     slug: "stoneware-dinner-plate-set",
     description:
       "Set of four reactive-glaze stoneware dinner plates, each one subtly unique.",
-    priceInKobo: 3200000,
+    priceInCents: 7200,
     imageId: "photo-1740811620405-8a505f3eb13c",
     stock: 9,
     categorySlug: "kitchen-home",
@@ -99,7 +99,7 @@ const PRODUCTS: {
     slug: "glass-pour-over-carafe",
     description:
       "Hourglass-shaped borosilicate carafe with a walnut collar, designed for slow, even extraction.",
-    priceInKobo: 1550000,
+    priceInCents: 3400,
     imageId: "photo-1442512595331-e89e73853f31",
     stock: 21,
     categorySlug: "kitchen-home",
@@ -110,7 +110,7 @@ const PRODUCTS: {
     slug: "leather-crossbody-bag",
     description:
       "Full-grain leather crossbody with an adjustable strap and brass hardware. Ages into a rich patina.",
-    priceInKobo: 4500000,
+    priceInCents: 12800,
     imageId: "photo-1605733513597-a8f8341084e6",
     stock: 8,
     categorySlug: "style-accessories",
@@ -120,7 +120,7 @@ const PRODUCTS: {
     slug: "canvas-tote-bag",
     description:
       "Heavyweight cotton canvas tote with reinforced stitching, built to carry groceries or a laptop alike.",
-    priceInKobo: 950000,
+    priceInCents: 3200,
     imageId: "photo-1544816155-12df9643f363",
     stock: 50,
     categorySlug: "style-accessories",
@@ -130,7 +130,7 @@ const PRODUCTS: {
     slug: "merino-wool-scarf",
     description:
       "Lightweight merino wool scarf, woven in a classic herringbone pattern for year-round warmth.",
-    priceInKobo: 1100000,
+    priceInCents: 4500,
     imageId: "photo-1565259119139-11af766445aa",
     stock: 33,
     categorySlug: "style-accessories",
@@ -140,7 +140,7 @@ const PRODUCTS: {
     slug: "minimalist-leather-watch",
     description:
       "Slim stainless case with a clean dial and genuine leather strap. Everyday water resistance.",
-    priceInKobo: 5200000,
+    priceInCents: 14500,
     imageId: "photo-1716399201049-60835e27c843",
     stock: 6,
     categorySlug: "style-accessories",
@@ -150,7 +150,7 @@ const PRODUCTS: {
     slug: "classic-wayfarer-sunglasses",
     description:
       "Acetate frames with polarized UV400 lenses. A shape that hasn't gone out of style in seventy years.",
-    priceInKobo: 1650000,
+    priceInCents: 5500,
     imageId: "photo-1584036553516-bf83210aa16c",
     stock: 24,
     categorySlug: "style-accessories",
@@ -160,7 +160,7 @@ const PRODUCTS: {
     slug: "leather-bifold-wallet",
     description:
       "Vegetable-tanned leather bifold with six card slots and a bill compartment. Slim by design.",
-    priceInKobo: 1400000,
+    priceInCents: 4800,
     imageId: "photo-1601592996763-f05c9c80a7f1",
     stock: 38,
     categorySlug: "style-accessories",
@@ -170,7 +170,7 @@ const PRODUCTS: {
     slug: "ribbed-knit-beanie",
     description:
       "Chunky ribbed-knit beanie in brushed wool blend, fleece-lined for cold-weather commutes.",
-    priceInKobo: 650000,
+    priceInCents: 2400,
     imageId: "photo-1544967919-44c1ef2f9e7a",
     stock: 45,
     categorySlug: "style-accessories",
@@ -181,7 +181,7 @@ const PRODUCTS: {
     slug: "wireless-earbuds",
     description:
       "True wireless earbuds with active noise cancellation and a 24-hour charging case.",
-    priceInKobo: 3800000,
+    priceInCents: 8900,
     imageId: "photo-1606220945770-b5b6c2c55bf1",
     stock: 19,
     categorySlug: "tech-everyday-carry",
@@ -191,7 +191,7 @@ const PRODUCTS: {
     slug: "mechanical-keyboard",
     description:
       "Hot-swappable 75% mechanical keyboard with tactile switches and per-key backlighting.",
-    priceInKobo: 4200000,
+    priceInCents: 10900,
     imageId: "photo-1589578228447-e1a4e481c6c8",
     stock: 11,
     categorySlug: "tech-everyday-carry",
@@ -201,7 +201,7 @@ const PRODUCTS: {
     slug: "portable-power-bank",
     description:
       "20,000mAh power bank with dual USB-C PD output, fast enough to top up a laptop.",
-    priceInKobo: 1950000,
+    priceInCents: 4900,
     imageId: "photo-1566554738544-d962991c3fee",
     stock: 31,
     categorySlug: "tech-everyday-carry",
@@ -211,7 +211,7 @@ const PRODUCTS: {
     slug: "leather-laptop-bag",
     description:
       "Structured leather laptop bag with a padded 15-inch sleeve and a detachable shoulder strap.",
-    priceInKobo: 3400000,
+    priceInCents: 9500,
     imageId: "photo-1763034179057-acad3a072568",
     stock: 7,
     categorySlug: "tech-everyday-carry",
@@ -221,7 +221,7 @@ const PRODUCTS: {
     slug: "fitness-smartwatch",
     description:
       "AMOLED smartwatch with heart-rate and sleep tracking, and a 10-day battery life.",
-    priceInKobo: 5800000,
+    priceInCents: 15900,
     imageId: "photo-1461141346587-763ab02bced9",
     stock: 14,
     categorySlug: "tech-everyday-carry",
@@ -231,7 +231,7 @@ const PRODUCTS: {
     slug: "cantilever-led-desk-lamp",
     description:
       "Adjustable cantilever desk lamp with stepless dimming and a matte black finish.",
-    priceInKobo: 2100000,
+    priceInCents: 5400,
     imageId: "photo-1543512214-4f76e81f8bfc",
     stock: 16,
     categorySlug: "tech-everyday-carry",

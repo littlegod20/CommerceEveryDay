@@ -30,8 +30,8 @@ export class Order {
   @Column({ name: "user_id", type: "uuid" })
   userId!: string;
 
-  @Column({ name: "total_in_kobo", type: "integer" })
-  totalInKobo!: number;
+  @Column({ name: "total_in_cents", type: "integer" })
+  totalInCents!: number;
 
   @Column({ type: "enum", enum: OrderStatus, default: OrderStatus.PENDING })
   status!: OrderStatus;
