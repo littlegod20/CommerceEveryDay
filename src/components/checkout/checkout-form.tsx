@@ -40,7 +40,7 @@ export function CheckoutForm() {
         key: PAYSTACK_PUBLIC_KEY,
         email: result.email,
         amount: result.amountInCents,
-        currency: "USD",
+        currency: "GHS",
         reference: result.reference,
         onSuccess: () => {
           startTransition(async () => {

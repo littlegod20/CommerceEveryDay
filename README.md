@@ -59,7 +59,7 @@ Or register a new account from `/account/register` — checkout requires being s
 
 There's no seeded admin password — it's config, not data, so it never lives in the database or the repo.
 
-**Paystack checkout**: use [Paystack's test card numbers](https://paystack.com/docs/payments/test-payments/) once you've added your own test API keys to `.env.local`. Amounts are charged in USD.
+**Paystack checkout**: use [Paystack's test card numbers](https://paystack.com/docs/payments/test-payments/) once you've added your own test API keys to `.env.local`. Amounts are charged in GHS.
 
 ## Why TypeORM (not Prisma)
 

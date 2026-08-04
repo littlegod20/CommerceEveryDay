@@ -1,8 +1,8 @@
-const usdFormatter = new Intl.NumberFormat("en-US", {
+const ghsFormatter = new Intl.NumberFormat("en-GH", {
   style: "currency",
-  currency: "USD",
+  currency: "GHS",
 });
 
 export function formatPriceFromCents(priceInCents: number): string {
-  return usdFormatter.format(priceInCents / 100);
+  return ghsFormatter.format(priceInCents / 100);
 }
